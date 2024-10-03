@@ -1,9 +1,9 @@
-package com.eafit.nodo.demo.services;
+package com.eafit.nodo.demo.models;
 
 public class NodoArbol {
-  int dato;
-  NodoArbol izquierdo;
-  NodoArbol derecho;
+  public int dato;
+  public NodoArbol izquierdo;
+  public NodoArbol derecho;
 
   public NodoArbol(int dato) {
     this.dato = dato;

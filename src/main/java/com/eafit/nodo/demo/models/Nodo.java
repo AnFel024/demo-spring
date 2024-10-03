@@ -1,8 +1,8 @@
-package com.eafit.nodo.demo.services;
+package com.eafit.nodo.demo.models;
 
 public class Nodo {
-  int dato;
-  Nodo siguiente;
+  public int dato;
+  public Nodo siguiente;
 
   public Nodo(int dato) {
     this.dato = dato;

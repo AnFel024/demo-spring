@@ -1,20 +1,34 @@
 package com.eafit.nodo.demo;
 
-import com.eafit.nodo.demo.services.StackService;
+import com.eafit.nodo.demo.services.ArbolBinarioBusquedaService;
 
-public class StackMainApplication {
+public class TreeMainApplication {
   public static void main(String[] args) {
-    StackService pila = new StackService();
-    pila.push(1);
-    pila.push(2);
-    pila.push(3);
-    System.out.println("Cima: " + pila.peek()); // Salida: Cima: 3
-    System.out.println("Tamaño: " + pila.getSize()); // Salida: Tamaño: 3
-    pila.pop(); // Salida: Desapilado: 3
-    pila.printStack();
-    System.out.println("Cima: " + pila.peek()); // Salida: Cima: 2
-    System.out.println("Tamaño: " + pila.getSize()); // Salida: Tamaño: 2
+    ArbolBinarioBusquedaService arbol = new ArbolBinarioBusquedaService();
+    arbol.insertar(50);
+    arbol.insertar(30);
+    arbol.insertar(20);
+    arbol.insertar(40);
+    arbol.insertar(70);
+    arbol.insertar(60);
+    arbol.insertar(80);
 
-    System.out.println("La pila está vacía: " + pila.isEmpty());
+    System.out.println("Recorrido en orden:");
+    arbol.inOrder(); // Salida: 20 30 40 50 60 70 80
+
+    System.out.println("\nBuscar 40: " + arbol.buscar(40)); // Salida: true
+    System.out.println("Buscar 90: " + arbol.buscar(90)); // Salida: false
+
+    arbol.eliminar(20);
+    System.out.println("\nRecorrido en orden después de eliminar 20:");
+    arbol.inOrder(); // Salida: 30 40 50 60 70 80
+
+    arbol.eliminar(30);
+    System.out.println("\nRecorrido en orden después de eliminar 30:");
+    arbol.inOrder(); // Salida: 40 50 60 70 80
+
+    arbol.eliminar(50);
+    System.out.println("\nRecorrido en orden después de eliminar 50:");
+    arbol.inOrder(); // Salida: 40 60 70 80
   }
 }

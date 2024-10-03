@@ -1,18 +1,23 @@
 package com.eafit.nodo.demo;
 
-import com.eafit.nodo.demo.controller.ListaController;
+import com.eafit.nodo.demo.services.StackService;
+import java.util.Stack;
 
-public class DataMainApplication {
+public class StackMainApplication {
   public static void main(String[] args) {
-    ListaController listaController = new ListaController();
-    listaController.addNodo(1);
-    listaController.addNodo(2);
-    listaController.addNodo(3);
-    listaController.addNodo(4);
-    listaController.addNodo(5);
-    listaController.printList();
-    listaController.deleteNodo(3);
-    listaController.printList();
-    System.out.println("Size: " + listaController.getSize());
+    StackService pila = new StackService();
+
+    pila.push(1);
+    pila.push(2);
+    pila.push(3);
+    pila.push(4);
+    System.out.println("Cima: " + pila.peek()); // Salida: Cima: 3
+    System.out.println("Tamaño: " + pila.getSize()); // Salida: Tamaño: 3
+    pila.pop(); // Salida: Desapilado: 3
+    pila.printStack();
+    System.out.println("Cima: " + pila.peek()); // Salida: Cima: 2
+    System.out.println("Tamaño: " + pila.getSize()); // Salida: Tamaño: 2
+
+    System.out.println("La pila está vacía: " + pila.isEmpty());
   }
 }
